@@ -2,9 +2,20 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://64044efc80d9c5c7bac50591.mockapi.io';
 
-export const getTodos = async () => {
+export const getNotes = async () => {
   const response = await axios.get('/todo/notes');
-  console.log(response.data);
+
+  return response.data;
+};
+
+export const deleteNote = async id => {
+  const response = await axios.delete(`/todo/notes/${id}`);
+
+  return response.data;
+};
+
+export const addNote = async newNote => {
+  const response = await axios.post('/todo/notes', newNote);
 
   return response.data;
 };

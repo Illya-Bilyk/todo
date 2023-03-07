@@ -1,5 +1,5 @@
 import { HomeItem } from './HomeStyled';
-import { Box } from '../Box';
+import { Box } from '../../components/Box';
 
 export const Home = () => {
   return (
