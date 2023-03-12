@@ -1,5 +1,5 @@
 import { Box } from '../Box';
-import { NavItem, TitleItem } from './AppBarStyled';
+import { NavItem, TitleItem } from './AppBar.styled';
 
 const navItems = [
   { href: '/', text: 'Home Page' },

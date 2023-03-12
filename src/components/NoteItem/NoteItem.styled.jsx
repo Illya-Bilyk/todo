@@ -27,7 +27,7 @@ export const Btn = styled.button`
   color: ${p => p.theme.colors.button};
 
   :hover {
-    background-color: ${p => p.theme.colors.hoverClose};
+    background-color: ${p => p.theme.colors.backgroundButton};
   }
 `;
 

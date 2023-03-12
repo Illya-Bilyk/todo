@@ -1,4 +1,4 @@
-import { HomeItem } from './HomeStyled';
+import { HomeItem } from './Home.styled';
 import { Box } from '../../components/Box';
 
 export const Home = () => {

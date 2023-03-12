@@ -4,6 +4,7 @@ import { NotesList } from 'components/NotesList/NotesList';
 import { NoteForm } from 'components/NoteForm/NoteForm';
 export const Notes = () => {
   const [notes, setNotes] = useState([]);
+  const [notesLength, setNotesLength] = useState(0);
 
   useEffect(() => {
     async function fetchNotes() {
@@ -16,6 +17,10 @@ export const Notes = () => {
     }
     fetchNotes();
   }, []);
+
+  useEffect(() => {
+    setNotesLength(notes.length);
+  }, [notes]);
 
   const handleDelete = async id => {
     try {
@@ -35,10 +40,43 @@ export const Notes = () => {
     }
   };
 
+  const handleComplete = async (id, note) => {
+    try {
+      await API.CompleteNote(id, note);
+      console.log(notes);
+      setNotes(
+        notes => notes.filter(n => n)
+        // notes.filter(n => {
+        //   // if (n.id === id) {
+        //   //   // n['completed'] = !n.completed;
+        //   //   // console.log(n['id']);
+        //   // }
+        //   return n;
+        // })
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleUpdate = async (id, note) => {
+    try {
+      await API.UpdateNote(id, note);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
-      <NoteForm onSubmit={handleSubmit} />
-      <NotesList items={notes} onDelete={handleDelete} />
+      <NoteForm onSubmit={handleSubmit} notesLength={notesLength} />
+      <NotesList
+        items={notes}
+        onDelete={handleDelete}
+        handleComplete={handleComplete}
+        onSubmit={handleUpdate}
+        notesLength={notesLength}
+      />
     </>
   );
 };

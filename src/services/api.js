@@ -19,3 +19,13 @@ export const addNote = async newNote => {
 
   return response.data;
 };
+
+export const CompleteNote = async (id, updatedNote) => {
+  const response = await axios.put(`/todo/notes/${id}`, updatedNote);
+  return response.data;
+};
+
+export const UpdateNote = async (id, updatedNote) => {
+  const response = await axios.put(`/todo/notes/${id}`, updatedNote);
+  return response.data;
+};

@@ -9,7 +9,7 @@ export const theme = {
     accent: '#ff5722',
     muted: '#f6f6f6',
     button: '#f44336',
-    hoverClose: '#e2e5e8',
+    backgroundButton: '#e2e5e8',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
@@ -19,7 +19,7 @@ export const theme = {
   },
   fontSizes: {
     xs: '12px',
-    s: '14px',
+    s: '16px',
     m: '24px',
     l: '32px',
     xl: '64px',
