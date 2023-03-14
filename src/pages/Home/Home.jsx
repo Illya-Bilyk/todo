@@ -12,7 +12,7 @@ export const Home = () => {
       flexDirection="column"
     >
       <h1>Home Page</h1>
-      <HomeItem to="notes">To notes</HomeItem>
+      <HomeItem to="tasks">To your tasks</HomeItem>
     </Box>
   );
 };

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Form, Field, Button } from '../NoteForm/NoteForm.styled';
+import { Form, Field, Button } from '../TaskForm/TaskForm.styled';
+import { Title } from './ModalEditForm.styled';
 
 export const ModalEditForm = ({ onSubmit, textValue, item, onClose }) => {
   const [text, setText] = useState(textValue);
@@ -8,7 +9,7 @@ export const ModalEditForm = ({ onSubmit, textValue, item, onClose }) => {
     e.preventDefault();
 
     const form = e.target;
-    const newTask = e.target.elements.note.value;
+    const newTask = e.target.elements.task.value;
 
     if (newTask.length === 0) {
       alert('You have to write something!');
@@ -23,15 +24,19 @@ export const ModalEditForm = ({ onSubmit, textValue, item, onClose }) => {
     form.reset();
   };
   return (
-    <Form onSubmit={handleSubmit}>
-      <Field
-        type="text"
-        name="note"
-        placeholder="Enter note text..."
-        onChange={e => setText(e.currentTarget.value)}
-        value={text}
-      />
-      <Button type="submit">Edit note</Button>
-    </Form>
+    <>
+      <Title>Change your task:</Title>
+      <Form onSubmit={handleSubmit}>
+        <Field
+          type="text"
+          name="task"
+          placeholder="Enter task text..."
+          onChange={e => setText(e.currentTarget.value)}
+          value={text}
+        />
+
+        <Button type="submit">Edit task</Button>
+      </Form>
+    </>
   );
 };

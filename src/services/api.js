@@ -2,30 +2,25 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://64044efc80d9c5c7bac50591.mockapi.io';
 
-export const getNotes = async () => {
-  const response = await axios.get('/todo/notes');
+export const getTasks = async () => {
+  const response = await axios.get('/todo/tasks');
 
   return response.data;
 };
 
-export const deleteNote = async id => {
-  const response = await axios.delete(`/todo/notes/${id}`);
+export const deleteTask = async id => {
+  const response = await axios.delete(`/todo/tasks/${id}`);
 
   return response.data;
 };
 
-export const addNote = async newNote => {
-  const response = await axios.post('/todo/notes', newNote);
+export const addTask = async newTask => {
+  const response = await axios.post('/todo/tasks', newTask);
 
   return response.data;
 };
 
-export const CompleteNote = async (id, updatedNote) => {
-  const response = await axios.put(`/todo/notes/${id}`, updatedNote);
-  return response.data;
-};
-
-export const UpdateNote = async (id, updatedNote) => {
-  const response = await axios.put(`/todo/notes/${id}`, updatedNote);
+export const UpdateTask = async (id, updatedTask) => {
+  const response = await axios.put(`/todo/tasks/${id}`, updatedTask);
   return response.data;
 };

@@ -3,7 +3,7 @@ import { NavItem, TitleItem } from './AppBar.styled';
 
 const navItems = [
   { href: '/', text: 'Home Page' },
-  { href: 'notes', text: 'Notes' },
+  { href: 'tasks', text: 'Tasks' },
   { href: 'about', text: 'About us' },
 ];
 export const AppBar = () => {
@@ -17,7 +17,7 @@ export const AppBar = () => {
       justifyContent="space-between"
       backgroundColor="muted"
     >
-      <TitleItem to="/">NOTES</TitleItem>
+      <TitleItem to="/">Tasks</TitleItem>
       <Box as="nav" display="flex">
         {navItems.map(({ href, text }) => (
           <NavItem to={href} key={href}>

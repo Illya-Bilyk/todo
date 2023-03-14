@@ -1,15 +1,9 @@
 import { Modal } from 'components/Modal/Modal';
 import { ModalEditForm } from 'components/ModalEditForm/ModalEditForm';
 import { useModal } from 'hooks/useModal';
-import { Wrapper, Text, Btn, Checkbox } from './NoteItem.styled';
+import { Wrapper, Text, Btn, Checkbox } from './TaskItem.styled';
 
-export const NoteItem = ({
-  item,
-  onDelete,
-  handleComplete,
-  onSubmit,
-  notesLength,
-}) => {
+export const TaskItem = ({ item, onDelete, handleComplete, onSubmit }) => {
   const { isModalOpen, openModal, closeModal } = useModal();
 
   const handleChange = () => {

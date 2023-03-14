@@ -1,8 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
 import { Home } from '../pages/Home/Home';
-// import { NotesList } from './NotesList/NotesList';
-import { Notes } from 'pages/Notes/Notes';
+import { Tasks } from 'pages/Tasks/Tasks';
 
 export const App = () => {
   return (
@@ -10,7 +9,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="notes" element={<Notes />} />
+          <Route path="tasks" element={<Tasks />} />
           <Route path="about" element={<div>ABOUT US</div>} />
         </Route>
       </Routes>
