@@ -48,6 +48,7 @@ export const Tasks = () => {
   return (
     <>
       <TaskForm onSubmit={handleSubmit} />
+
       <TasksList
         items={tasks}
         onDelete={handleDelete}

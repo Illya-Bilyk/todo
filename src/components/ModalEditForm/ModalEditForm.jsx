@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { Form, Field, Button } from '../TaskForm/TaskForm.styled';
 import { Title } from './ModalEditForm.styled';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const ModalEditForm = ({ onSubmit, textValue, item, onClose }) => {
   const [text, setText] = useState(textValue);
+  const errorNotification = () => toast.error('You have to write something!');
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -12,7 +15,7 @@ export const ModalEditForm = ({ onSubmit, textValue, item, onClose }) => {
     const newTask = e.target.elements.task.value;
 
     if (newTask.length === 0) {
-      alert('You have to write something!');
+      errorNotification();
       return;
     }
 
@@ -37,6 +40,18 @@ export const ModalEditForm = ({ onSubmit, textValue, item, onClose }) => {
 
         <Button type="submit">Edit task</Button>
       </Form>
+      <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   );
 };
